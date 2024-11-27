@@ -1,16 +1,11 @@
+import Product from "./Product";
+
 export default function Main({products}) {
     return (
-        <main>
+        <main className="pt-4 gap-4 flex flex-1 flex-wrap justify-center">
             {
-                products.map((product, i) => (
-                    <div className="shadow-lg flex flex-col justify-between">
-                        <img 
-                        className="w-64 h-32 round"
-                            src={product.image}
-                            alt={product.image}
-                        />
-                        <h2>{product.name}</h2>
-                    </div>
+                products?.map((product, i) => (
+                    <Product product={product} />
                 ))
             }
         </main>
